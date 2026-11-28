@@ -1,0 +1,572 @@
+
+/* =========================================
+   CONFIGURACIÓN GENERAL
+========================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --verde-oscuro: #123D42;
+    --verde-profundo: #245B58;
+    --aguamarina: #5BAFA5;
+    --verde-claro: #B4E7D8;
+    --fondo: #E4F1EC;
+    --blanco: #FFFFFF;
+    --texto: #527B72;
+}
+
+body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    min-height: 100vh;
+}
+
+
+/* =========================================
+   INDEX 1 - PANTALLA INICIAL
+========================================= */
+
+.inicio {
+    background: var(--verde-oscuro);
+    color: var(--fondo);
+    overflow: hidden;
+}
+
+.pantalla-inicio {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    padding: 25px;
+}
+
+.inicio-contenido {
+    text-align: center;
+    z-index: 2;
+    animation: aparecer 1.2s ease;
+}
+
+.subtitulo {
+    font-size: 11px;
+    letter-spacing: 5px;
+    color: var(--aguamarina);
+    margin-bottom: 25px;
+    font-weight: 600;
+}
+
+.inicio h1 {
+    font-size: clamp(38px, 7vw, 65px);
+    font-weight: 300;
+    line-height: 1.2;
+    letter-spacing: 1px;
+    margin-bottom: 20px;
+}
+
+.texto-inicio {
+    font-size: 15px;
+    color: #A9CEC4;
+    letter-spacing: 1px;
+    margin-bottom: 45px;
+}
+
+
+/* BOTÓN */
+
+.boton-sorpresa {
+    display: inline-flex;
+    align-items: center;
+    gap: 18px;
+
+    padding: 16px 30px;
+
+    background: var(--aguamarina);
+    color: var(--verde-oscuro);
+
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 1px;
+
+    border-radius: 40px;
+
+    transition: all 0.35s ease;
+}
+
+.boton-sorpresa span {
+    font-size: 20px;
+    transition: transform 0.3s ease;
+}
+
+.boton-sorpresa:hover {
+    background: var(--verde-claro);
+    transform: translateY(-4px);
+    box-shadow: 0 10px 30px rgba(91, 175, 165, 0.2);
+}
+
+.boton-sorpresa:hover span {
+    transform: translateX(5px);
+}
+
+
+/* DECORACIÓN */
+
+.decoracion-inicio {
+    position: absolute;
+    width: 400px;
+    height: 400px;
+    border: 1px solid rgba(180, 231, 216, 0.08);
+    border-radius: 50%;
+    pointer-events: none;
+}
+
+.decoracion-inicio::before {
+    content: "";
+    position: absolute;
+    inset: 35px;
+    border: 1px solid rgba(180, 231, 216, 0.06);
+    border-radius: 50%;
+}
+
+.pie-inicio {
+    position: absolute;
+    bottom: 25px;
+    color: #739A90;
+    font-size: 11px;
+    letter-spacing: 2px;
+}
+
+
+/* =========================================
+   INDEX 2 - CUMPLEAÑOS
+========================================= */
+
+.cumpleanos {
+    background: var(--fondo);
+    color: var(--verde-profundo);
+    overflow-x: hidden;
+    position: relative;
+}
+
+.contenedor-cumple {
+    width: 100%;
+    max-width: 750px;
+    margin: auto;
+    padding: 65px 25px 35px;
+    text-align: center;
+    position: relative;
+    z-index: 2;
+}
+
+
+/* ENCABEZADO */
+
+.encabezado-cumple {
+    animation: aparecer 1.2s ease;
+}
+
+.encabezado-cumple h1 {
+    font-size: clamp(38px, 7vw, 60px);
+    font-weight: 300;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    margin-bottom: 18px;
+}
+
+.texto-encabezado {
+    color: var(--texto);
+    font-size: 14px;
+    letter-spacing: 1px;
+}
+
+
+/* SEPARADOR */
+
+.separador {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+    margin: 20px auto;
+}
+
+.separador span {
+    width: 35px;
+    height: 1px;
+    background: var(--aguamarina);
+}
+
+.separador div {
+    width: 7px;
+    height: 7px;
+    background: var(--aguamarina);
+    transform: rotate(45deg);
+}
+
+
+/* =========================================
+   DIBUJO
+========================================= */
+
+.seccion-dibujo {
+    margin: 40px auto 30px;
+    animation: subir 1.3s ease;
+}
+
+.marco-dibujo {
+    width: 100%;
+    max-width: 390px;
+    margin: auto;
+    padding: 10px;
+
+    background: rgba(255, 255, 255, 0.65);
+
+    border: 1px solid rgba(91, 175, 165, 0.25);
+
+    box-shadow: 0 15px 45px rgba(36, 91, 88, 0.10);
+}
+
+.dibujo {
+    display: block;
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+}
+
+
+/* =========================================
+   DEDICATORIA
+========================================= */
+
+.dedicatoria {
+    max-width: 480px;
+    margin: 40px auto;
+    animation: subir 1.5s ease;
+}
+
+.dedicatoria h2 {
+    font-size: 28px;
+    font-weight: 400;
+    margin-bottom: 18px;
+    color: var(--verde-profundo);
+}
+
+.dedicatoria p {
+    font-size: 14px;
+    line-height: 2;
+    color: var(--texto);
+    white-space: pre-line;
+}
+
+.firma {
+    display: block;
+    margin-top: 22px;
+    color: var(--aguamarina);
+    font-size: 13px;
+    font-style: italic;
+    letter-spacing: 1px;
+}
+
+
+/* =========================================
+   REPRODUCTOR DE MÚSICA
+========================================= */
+
+.reproductor {
+    max-width: 390px;
+    width: 100%;
+    margin: 45px auto 30px;
+    padding: 20px;
+
+    background: var(--verde-oscuro);
+    color: var(--fondo);
+
+    border-radius: 15px;
+
+    box-shadow: 0 12px 30px rgba(18, 61, 66, 0.15);
+
+    text-align: left;
+    animation: subir 1.7s ease;
+}
+
+
+/* PARTE SUPERIOR */
+
+.reproductor-superior {
+    display: flex;
+    align-items: center;
+    gap: 13px;
+}
+
+.icono-musica {
+    width: 45px;
+    height: 45px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: var(--aguamarina);
+    color: var(--verde-oscuro);
+
+    border-radius: 10px;
+    font-size: 25px;
+}
+
+.informacion-musica {
+    flex: 1;
+}
+
+.informacion-musica h3 {
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.informacion-musica p {
+    font-size: 11px;
+    color: #A9CEC4;
+    margin-top: 5px;
+}
+
+
+/* BOTÓN PLAY */
+
+.boton-play {
+    width: 42px;
+    height: 42px;
+
+    border: none;
+    border-radius: 50%;
+
+    background: var(--aguamarina);
+    color: var(--verde-oscuro);
+
+    font-size: 16px;
+    cursor: pointer;
+
+    transition: all 0.25s ease;
+}
+
+.boton-play:hover {
+    background: var(--verde-claro);
+    transform: scale(1.08);
+}
+
+
+/* BARRA DE TIEMPO */
+
+.barra-tiempo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 22px;
+}
+
+.barra-tiempo span {
+    font-size: 10px;
+    color: #A9CEC4;
+    min-width: 28px;
+}
+
+
+/* BARRAS PERSONALIZADAS */
+
+input[type="range"] {
+    appearance: none;
+    -webkit-appearance: none;
+
+    height: 4px;
+
+    background: #527B72;
+    border-radius: 10px;
+
+    outline: none;
+    cursor: pointer;
+}
+
+#barra-progreso {
+    flex: 1;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+    appearance: none;
+    -webkit-appearance: none;
+
+    width: 11px;
+    height: 11px;
+
+    background: var(--aguamarina);
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+input[type="range"]::-moz-range-thumb {
+    width: 11px;
+    height: 11px;
+
+    background: var(--aguamarina);
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+
+/* VOLUMEN */
+
+.control-volumen {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    margin-top: 18px;
+}
+
+.control-volumen span {
+    color: #A9CEC4;
+    font-size: 13px;
+}
+
+#volumen {
+    width: 100px;
+}
+
+
+/* =========================================
+   FOOTER
+========================================= */
+
+.pie-cumple {
+    margin-top: 45px;
+    font-size: 10px;
+    letter-spacing: 3px;
+    color: #83AAA0;
+}
+
+
+/* =========================================
+   CONFETI
+========================================= */
+
+#confeti-container {
+    position: fixed;
+    inset: 0;
+    overflow: hidden;
+    pointer-events: none;
+    z-index: 10;
+}
+
+.confeti {
+    position: absolute;
+    top: -20px;
+    opacity: 0.9;
+    animation: caer linear forwards;
+    border-radius: 2px;
+}
+
+
+/* =========================================
+   ANIMACIONES
+========================================= */
+
+@keyframes aparecer {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes subir {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes caer {
+    0% {
+        transform: translateY(-10vh) rotate(0deg);
+        opacity: 1;
+    }
+
+    100% {
+        transform: translateY(110vh) rotate(720deg);
+        opacity: 0;
+    }
+}
+
+
+/* =========================================
+   RESPONSIVE - CELULARES
+========================================= */
+
+@media (max-width: 600px) {
+
+    .decoracion-inicio {
+        width: 280px;
+        height: 280px;
+    }
+
+    .contenedor-cumple {
+        padding: 45px 20px 25px;
+    }
+
+    .encabezado-cumple h1 {
+        letter-spacing: 1px;
+    }
+
+    .seccion-dibujo {
+        margin-top: 30px;
+    }
+
+    .marco-dibujo {
+        max-width: 340px;
+    }
+
+    .dedicatoria {
+        margin: 35px auto;
+    }
+
+    .reproductor {
+        padding: 17px;
+    }
+
+    .pie-cumple {
+        margin-top: 35px;
+    }
+
+}
+
+
+/* =========================================
+   PANTALLAS MUY PEQUEÑAS
+========================================= */
+
+@media (max-width: 360px) {
+
+    .encabezado-cumple h1 {
+        font-size: 34px;
+    }
+
+    .subtitulo {
+        letter-spacing: 3px;
+        font-size: 9px;
+    }
+
+    .reproductor {
+        padding: 14px;
+    }
+
+}
